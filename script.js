@@ -1,21 +1,28 @@
 const dino = document.querySelector('.dino');
+let isJumping = false;
 
 function heandleKeyUp(event) {
     if (event.keyCode === 32) {
-        jump();
+        if (!isJumping) {
+            jump();
+        }
     }
 }
 
 function jump() {
     let position = 0;
 
+    isJumping = true;
+
     let upInterval = setInterval(() => {
         if (position >= 150) {
             clearInterval(upInterval);
+
             //Descendo o Dino
             let downInterval = setInterval(() => {
                 if (position <= 0) {
                     clearInterval(downInterval);
+                    isJumping = false;
                 } else {
                     position -= 20;
                     dino.style.bottom = position + 'px'
