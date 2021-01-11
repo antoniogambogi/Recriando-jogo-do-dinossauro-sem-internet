@@ -1,7 +1,11 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
 .dino {
     width: 60px;
     height: 60px;
-    background-color: green;
+    background-image: url(../img/dino.png);
     position: absolute;
     bottom: 0;
 }
@@ -10,6 +14,34 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: red;
+    background-image: url(../img/cactus.png);
     bottom: 0;
+}
+
+.gameOver {
+    text-align: center;
+    color: #666666;
+    margin-top: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Animação com CSS */
+
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+.background {
+    position: absolute;
+    bottom: 0;
+    background-image: url(../img/background.png);
+    background-repeat: repeat-x;
+    animation: slideright 600s infinite linear;
+    width: 100%;
+    height: 200px;
 }
